@@ -1,0 +1,30 @@
+
+.formbold-main-wrapper {
+ 
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.formbold-form-wrapper {
+  font-size: 2vh;
+  border-radius: 5vh;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+border: 1px solid lightgray;
+  background: white;
+}
+
+.status_container{
+  padding: 10vh;
+}
+
+
+.strech{
+  min-width: 100%;
+  display:block;
+  border: 20px red solid;
+}
+
+

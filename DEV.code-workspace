@@ -1,0 +1,22 @@
+{
+  "folders": [
+	{
+		"path": "../../DEV"
+	},
+	{
+		"path": "../../.."
+	},
+	{
+		"path": ".."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "DEV"
+  },
+  "extensions": {
+    "recommendations": [
+      "ttoowa.in-your-face-incredible",
+      "hediet.debug-visualizer"
+    ]
+  }
+}

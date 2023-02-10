@@ -1,0 +1,84 @@
+.registration{
+    display: flex;
+    flex-direction: column;
+    padding: 110px 0 40px 0;
+    background: -webkit-linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);
+        
+    .content{
+        width: 80%;
+        margin: auto;
+        color: #1C3879;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .pricing{
+            .text{
+                margin: 10px 0;
+            }
+
+            table{
+                // border-collapse: collapse;
+                table-layout: fixed;
+                border: 1px solid #1C3879;
+
+                td, th{
+                    border: 1px solid #1C3879;
+                    padding: 5px 15px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .buttons{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .btn{
+                width: 300px;
+                outline: none;
+                color: #1C3879;
+                background: transparent;
+                border: 2px solid #1C3879;
+                cursor: pointer;
+                font-family: 'Roboto Slab', serif;
+                padding: 15px 0;
+                font-size: 18px;
+                transition: all 0.2s;
+
+                &:not(:last-child){
+                    margin-bottom: 20px;
+                }
+
+                &:hover{
+                    color: #d5cede;
+                    background: #1C3879;
+                }
+            }
+        }
+    }
+
+    .btn-secondary{
+        width: 300px;
+        outline: none;
+        color: #d5cede;
+        background: #1C3879;
+        border: 2px solid #1C3879;
+        cursor: pointer;
+        font-family: 'Roboto Slab', serif;
+        padding: 10px 0;
+        font-size: 20px;
+        transition: all 0.2s;
+        margin: 50px auto 30px;
+
+        &:hover{
+            color: #1C3879;
+            background: transparent;
+        }
+    }
+}

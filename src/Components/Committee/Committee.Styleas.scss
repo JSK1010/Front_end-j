@@ -1,0 +1,13 @@
+.committee{
+    padding: 110px 0 40px 0;
+    background: -webkit-linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);
+
+    color: #1C3879;
+    
+    .content{
+        width: 80%;
+        margin: auto;
+    }
+}

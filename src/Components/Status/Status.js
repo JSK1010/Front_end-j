@@ -1,0 +1,148 @@
+import './Status.Styles.scss'
+import { Link, Navigate, useLocation } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import jwt from 'jwt-decode'
+import FileBase64 from 'react-file-base64';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
+
+const Publication = () => {
+  const navigate = useNavigate();
+
+  const [valid,setValid]=useState('');
+  const [user, setUser] = useState('');
+
+
+const[decision,setDecision]=useState(false);
+const[warning,setWarning]=useState('');
+const[revision,setRevision]=useState('');
+const[check,setCheck]=useState('');
+
+async function getComments() {
+  const req = await fetch('http://localhost:5000/getComments', {
+    headers: {
+      'x-access-token': localStorage.getItem('token'),
+    },
+  })
+
+  const data = await req.json()
+  if (data.status === 'ok') {
+    setWarning(data.warning);
+    setRevision(data.revision);
+    if(data.decision===true){
+      setDecision("ACCEPTED")
+    }
+    else if(data.decision===false){
+      setDecision("REJECTED")
+    }
+    else{
+      setDecision("NOT UPDATED")
+    }
+  } else {
+    console.log(data.status);
+  }
+
+}
+
+
+
+
+
+
+	async function populateQuote() {
+		const req = await fetch('http://localhost:5000/validation_papers', {
+			headers: {
+				'x-access-token': localStorage.getItem('token'),
+			},
+		})
+
+		const data = await req.json()
+		if (data.status === 'ok') {
+			setValid(true);
+      setUser(data.who.email);
+      getComments();
+		} else {
+			setValid(false);
+      navigate('/login');
+		}
+    console.log({'user_validation':valid});
+
+	}
+
+	useEffect(() => {
+		const token = localStorage.getItem('token')
+		if (token) {
+      
+			const user = jwt(token)
+      console.log(user['username'])
+			if (!user) {
+        console.log("invalid")
+				localStorage.removeItem('token')
+        navigate("/login")
+			} else {
+        console.log("token passed")
+				populateQuote()
+			}
+		}
+	}, [])
+
+
+
+
+
+
+
+
+
+  return (
+   
+   
+    <div>
+    <div className="formbold-main-wrapper">
+      <div className="formbold-form-wrapper">
+       
+
+
+    
+        <div className=''>
+
+          <div className='row'>
+            <div className='col-md-5'>  <h4>Paper Status</h4></div>
+            <h3 className='col-md-1'>:</h3>
+            <div className='col-md-6'>  <h6>{decision}</h6></div>
+          </div>
+
+          <div className='row'>
+            <div className='col-md-5'>  <h4>Revision type: </h4></div>
+            <h3 className='col-md-1'>:</h3>
+            <div className='col-md-6'>  <h6>{warning}</h6></div>
+          </div>
+
+          <div className='row'>
+            <div className='col-md-5'>  <h4>Revision Feedback : </h4></div>
+            <h3 className='col-md-1'>:</h3>
+            <div className='col-md-6'>  <h6>{revision}</h6></div>
+          </div> 
+
+          
+         
+        </div>
+       
+    
+
+   
+
+
+      </div>
+
+     
+    </div>
+    
+    
+    </div>
+    
+    
+      )
+}
+
+export default Publication

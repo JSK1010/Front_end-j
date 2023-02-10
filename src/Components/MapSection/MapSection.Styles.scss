@@ -1,0 +1,44 @@
+.map-section {
+  position: relative;
+  color: #1C3879;
+  padding: 70px 0;
+  width: 80%;
+  margin: auto;
+
+  .text{
+    color: #1C3879;
+    width: 100%;
+    text-align: center;
+  }
+
+  .map-container {
+    width: 70%;
+    margin: auto;
+    height: 500px;
+
+    .leaflet-container {
+      height: 100%;
+      width: 100%;
+    }
+
+    .leaflet-control { z-index: 0 !important}
+    .leaflet-pane { z-index: 0 !important}
+    .leaflet-top, .leaflet-bottom {z-index: 0 !important}
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .map-section {
+    .map-container {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .map-section {
+    .map-container {
+      width: 75%;
+    }
+  }
+}

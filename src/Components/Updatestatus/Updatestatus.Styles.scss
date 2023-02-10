@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
+
+ .containerboxx {
+  display: grid;
+  margin-top: 50px;
+  min-width: 100%;
+  margin: 40px 0;
+  gap: 7vh;
+}
+
+
+.borderline{
+  padding: 5vh;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color:white;
+  border: 2px solid;
+  border-radius: 3vh;
+  .Q{
+    color:rgb(176, 86, 86);
+    font-size: large;
+    font-weight: bolder;
+  }
+  .download{
+    color: white;
+   
+
+  }
+
+}
+
+
+
+.borderline:hover{
+  
+  border: 4px rgb(0, 0, 0) solid;
+}
+.blurx{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+
+.rb1{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  .rb1c{
+    height: 50%;
+    width: 100%;
+    padding: 1vh;
+    border-radius: 3vh;
+    color:black;
+    font-weight: bolder;
+  }
+  
+}
+.decision{
+  margin:4vh;
+  margin-left: 0;
+}
+
+
+.border_row1{
+  box-shadow: 1px 1px 12px #1e1e1e;
+  border-radius: 3vh;
+.content_row{
+  padding:5vh;
+  
+}
+}

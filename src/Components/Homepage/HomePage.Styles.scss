@@ -1,0 +1,260 @@
+.homepage{
+
+    .landing-section{
+        height: calc(100vh - 140px);
+        background: #D3CCE3;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-image: linear-gradient(to right, rgba(#E9E4F0, 0.3), rgba(#D3CCE3, 0.7)),
+                          url("../../Assets/images/background2.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 70px 5vh;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        color: #1C3879;
+
+        .college-logo{
+            width: 300px;
+            position: absolute;
+            top: 45px;
+            left: 10px;
+
+            img{
+                width: 100%;
+            }
+        }
+        .content{
+            margin-top: 80px;
+            width: 90%;
+
+            .heading-logo-container{
+                width: 250px;
+                margin: auto;
+                margin-bottom: 20px;
+                
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .heading-primary{
+                .small{
+                    font-size: 32px;
+                }
+                .orange{
+                    -webkit-text-stroke-width: 3px;
+                    -webkit-text-stroke-color: #f1955f;
+                }
+            }
+
+            .orange-only{
+                // -webkit-text-stroke-width: 3px;
+                // -webkit-text-stroke-color: #f1955f;
+                font-size: 46px;
+                margin: 30px auto;
+            }
+
+            .details{
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                font-size: 20px;
+                font-weight: 400;
+                width: 400px;
+
+                .detail{
+                    display: flex;
+                    align-items: center;
+
+                    &:not(last-child){
+                        margin-bottom: 20px;
+                    }
+
+                    a{
+                        color: #1C3879;
+                        cursor: pointer;
+                    }
+
+                    svg{
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .buttons{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                margin: auto;
+
+                .btn{
+                    outline: none;
+                    border: 1px solid #1C3879;
+                    text-align: center;
+                    color: #E9E4F0;
+                    background: #1C3879;
+                    text-decoration: none;
+                    font-size: 20px;
+                    padding: 10px 15px;
+                    width: 33%;
+                    font-family: 'Roboto Slab', serif;
+                    transition: all 0.2s;
+                    cursor: pointer;
+
+                    &:not(:last-child){
+                        border-right: none;
+                    }
+
+                    &:hover{
+                        background: transparent;
+                        color: #1C3879;
+                    }
+                }
+            }
+
+            .event-handlers{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                margin: 25px auto;
+                width: 85%;
+
+                .handler{
+                    .logo-container{
+                        img{
+                            width: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+
+                .ieee-details{
+                    .logo-container{
+                        width: 150px;
+                    }
+                }
+
+                .clg-details{
+                    .logo-container{
+                        width: 150px;
+                    }
+                }
+
+                .other-details{
+                    text-align: center;
+                    font-size: 16px;
+                    display: flex;
+                    flex-direction: column-reverse;
+
+                    .ids{
+                        margin: 15px auto;
+                    }
+
+                    // .prev-ieee{
+                    //     font-size: 22px;
+                    //     margin-bottom: 30px;
+                    // }
+
+                    a{
+                        text-decoration: none;
+                        color: #1C3879;
+                        cursor: pointer;
+
+                        &:hover{
+                            color: #607EAA;
+                        }
+                    }
+                }
+            }
+        }
+
+        .dates-part{
+            position: absolute;
+            top: 80px;
+            right: 10px;
+            text-align: right;
+
+            .date-container{
+                margin-bottom: 20px;
+                border-right: 3px solid #1C3879;
+                padding: 0 15px;
+
+                .date-heading{
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .countdown-section{
+        padding: 70px 20%;
+        background: #1C3879;
+
+        .heading-secondary{
+            color: #E9E4F0;
+            border: none;
+            width: 100%;
+        }
+
+        .timer-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .time{
+                background: rgba(#E9E4F0, 0.8);
+                color: #1C3879;
+                font-size: 36px;
+                border-radius: 2px;
+                padding: 20px 30px;
+                margin: 20px;
+                min-width: 50px;
+                text-align: center;
+            }
+
+            .seperator{
+                color: rgba(#E9E4F0, 0.8);
+                font-size: 36px;
+            }
+        }
+
+    }
+
+    .about-us-section{
+        min-height: 100vh;
+        background: #D3CCE3;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-image: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);
+        padding: 70px 0;
+        
+        .content{
+            width: 80%;
+            margin: auto;
+
+            .img-container{
+                width: 500px;
+                margin: 30px auto;
+
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+
+
+    }
+}
