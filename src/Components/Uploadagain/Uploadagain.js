@@ -54,7 +54,9 @@ const onSubmit = async e=>{
   try{
 
 const res=await axios.post('http://localhost:5000/uploadagain',formData,{
-  headers:{'Content-Type': 'multipart/form-data'}
+  
+  headers:{'Content-Type': 'multipart/form-data',
+  'x-access-token': localStorage.getItem('token'),}
 });
 const {fileName , filePath}=res.data;
 setUploadedFile(fileName,filePath);
@@ -68,13 +70,19 @@ console.log({'fileName':fileName,'filepath':filePath})
     if(err.response.status === 500){
       console.log('Problem with server');
     }
-    if(err.response.status === 600){
+    else if(err.response.status === 600){
       console.log('Only pdfs are allowed');
       setError('Only Pdf');
       SetStatusColor('red');
     }
+    else if(err.response.status === 700){
+      console.log("invalid")
+      navigate("/login")
+    }
     else{
-      console.log("err.response.data.msg");
+        console.log("invalid")
+        navigate("/login")
+
     }
   }
 

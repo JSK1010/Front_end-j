@@ -30,7 +30,7 @@ const [Domain, setDomain] = useState('');
 
 async function getpdfinfos() {
 
-
+  
   
   const req = await fetch('http://localhost:5000/getpdfinfos', {
     headers: {
@@ -55,6 +55,7 @@ async function getpdfinfos() {
    setDomain(data.Domain);
   
   }
+  
   
   
   else{
@@ -82,7 +83,7 @@ function getpdf(e){
   const em = e.currentTarget.getAttribute("data-id")
   populateQuote();
 if(valid==true){
-
+  
   Axios({
     url:"http://localhost:5000/getpdf/"+em,
     method:"GET",
@@ -111,7 +112,7 @@ async function populateQuote() {
       'x-access-token': localStorage.getItem('token'),
     },
   })
-
+  
   const data = await req.json()
   if (data.status === 'ok') {
     setValid(true);
@@ -133,7 +134,7 @@ async function populateQuote() {
 useEffect(() => {
   const token = localStorage.getItem('token')
   if (token) {
-    
+   
     const user = jwt(token)
     console.log(user['username'])
     if (!user) {
