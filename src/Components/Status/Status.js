@@ -27,7 +27,10 @@ async function getComments() {
 
   const data = await req.json()
   if (data.status === 'ok') {
-    setWarning(data.warning);
+    if(data.warning=='R'){
+      setWarning('Your paper has been rejected, please correct the form with new details');
+    }
+    else{setWarning(data.warning);}
     setRevision(data.revision);
     if(data.decision===true){
       setDecision("ACCEPTED")

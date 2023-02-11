@@ -88,7 +88,8 @@ async function rejectedc(){
   const req = await fetch('http://localhost:5000/paper_decision/false', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
-      'user':props.email
+      'user':props.email,
+      'body': JSON.stringify(message)
     },
   });
 
