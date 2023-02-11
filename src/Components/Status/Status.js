@@ -87,6 +87,9 @@ async function getComments() {
 				populateQuote()
 			}
 		}
+    else{
+      navigate("/login")
+    }
 	}, [])
 
 

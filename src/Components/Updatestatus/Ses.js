@@ -112,6 +112,7 @@ async function populateQuote() {
   })
 
   const data = await req.json()
+  
   if (data.status === 'ok') {
     setValid(true);
     setUser(data.who.email);
@@ -138,19 +139,23 @@ useEffect(() => {
     if (!user) {
       console.log("invalid")
       localStorage.removeItem('token')
-      navigate("/login")
+      navigate("/updatestatuslogin")
     } else {
-      if(user['username']=='devilprotocol007@gmail.com'){
+      if(user['username']=='admin@gmail.com'){
       console.log("token passed")
       populateQuote();
       }
       else{
         console.log("invalid")
       localStorage.removeItem('token')
-      navigate("/login")
+      navigate("/updatestatuslogin")
       }
 
     }
+  }
+
+  else{
+    navigate("/updatestatuslogin")
   }
 }, [])
 

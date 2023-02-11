@@ -216,7 +216,12 @@ async function checker() {
 				populateQuote()
 			}
 		}
-	}, [])
+
+    else{
+      navigate("/login")
+    }
+	}
+  , [])
 
 
 

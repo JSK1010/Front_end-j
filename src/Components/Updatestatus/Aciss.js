@@ -139,7 +139,7 @@ useEffect(() => {
     if (!user) {
       console.log("invalid")
       localStorage.removeItem('token')
-      navigate("/login")
+      navigate("/updatestatuslogin")
     } else {
       if(user['username']=='devilprotocol007@gmail.com'){
       console.log("token passed")
@@ -148,10 +148,13 @@ useEffect(() => {
       else{
         console.log("invalid")
       localStorage.removeItem('token')
-      navigate("/login")
+      navigate("/updatestatuslogin")
       }
 
     }
+  }
+  else{
+    navigate("/updatestatuslogin")
   }
 }, [])
 
