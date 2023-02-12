@@ -29,6 +29,8 @@
 }
 .pub{
     margin: 6vh;
+    font-size: 10vh;
+    
    
 }
 
@@ -46,11 +48,12 @@
   border: 1px solid #18181a;
   color: #18181a;
   display: inline-block;
-  font-size: 15px;
-  line-height: 15px;
-  padding: 18px 18px 17px;
+  font-size: 3.5vh;
+  line-height: 2vh;
+  padding: 3vh;
   text-decoration: none;
   cursor: pointer;
+  width: 30vh;
   background: #fff;
   user-select: none;
   -webkit-user-select: none;
@@ -101,4 +104,11 @@
   transform: translateX(-50%) translateY(-50%);
   opacity: 1;
   transition: all 600ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.heading-secondary{
+  display: flex;
+  justify-content: center;
+  font-size: 5vh;
+  font-weight: bolder;
 }

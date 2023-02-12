@@ -11,7 +11,7 @@ const[backendData,setBackendData]=useState([{}])
   return (
     <div className='publication'>
         <div className='content'>
-            <h1 className='heading-secondary'>Publish Your Paper Here</h1>
+            <h2 className='heading-secondary'>Publish Your Paper Here</h2>
             <div className='box'>
 
 

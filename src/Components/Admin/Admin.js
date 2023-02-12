@@ -14,7 +14,7 @@ const [password,setPassword]=useState("");
 const[error,setError]=useState('');
 const [valid,setValid]=useState('');
 const [user, setUser] = useState('');
-
+const play="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
 
 
 function review1(revert){
@@ -108,32 +108,32 @@ async function handleClick(event){
             <h1 className='heading-secondary'>Choose Your Role</h1>
             <div id="containeradmin">
             <div class="button" onClick={() => review1('Ses')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Smart Electronic Systems</a>
   </div>
 
   <div class="button" onClick={() => review1('Wc')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Wireless Communication</a>
   </div>
   <div class="button" onClick={() => review1('Ngn')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Next Generation Wireless Networks</a>
   </div>
   <div class="button" onClick={() => review1('Sarf')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Smart Antenna and RF Technologies for next generation Communication</a>
   </div>
   <div class="button" onClick={() => review1('Sip')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Signal and Image Processing</a>
   </div>
   <div class="button" onClick={() => review1('Aciss')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Advanced Computing and Information Systems Security</a>
   </div>
   <div class="button" onClick={() => review1('Wie')} id="button-7">
-    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <div id="dub-arrow"><img src={play} alt="" /></div>
     <a className='alink' href="#">Women in Engineering</a>
   </div>
 

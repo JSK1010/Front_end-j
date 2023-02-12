@@ -113,20 +113,20 @@ async function getComments() {
         <div className=''>
 
           <div className='row'>
-            <div className='col-md-5'>  <h4>Paper Status</h4></div>
-            <h3 className='col-md-1'>:</h3>
+            <div className='col-md-5'>  <h4>Paper Status:</h4></div>
+            <h3 className='col-md-1'></h3>
             <div className='col-md-6'>  <h6>{decision}</h6></div>
           </div>
 
           <div className='row'>
             <div className='col-md-5'>  <h4>Revision type: </h4></div>
-            <h3 className='col-md-1'>:</h3>
+            <h3 className='col-md-1'></h3>
             <div className='col-md-6'>  <h6>{warning}</h6></div>
           </div>
 
           <div className='row'>
             <div className='col-md-5'>  <h4>Revision Feedback : </h4></div>
-            <h3 className='col-md-1'>:</h3>
+            <h3 className='col-md-1'></h3>
             <div className='col-md-6'>  <h6>{revision}</h6></div>
           </div> 
 

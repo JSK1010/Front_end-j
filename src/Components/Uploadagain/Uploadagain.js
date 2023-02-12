@@ -180,22 +180,22 @@ async function checker() {
 <div>
 <div className="formbold-main-wrapper">
   <div className="formbold-form-wrapper">
-    <form onSubmit={onSubmit} method="POST">
+    <form className='resp_uploadagain' onSubmit={onSubmit} method="POST">
         
     <div className="custom-file">
+  
   <input required type="file" className="custom-file-input" id="customFile" onChange={filechange}/>
-  <label className="custom-file-label " htmlFor="customFile">{filename}</label>
   <span className='status' style={{color:statusColor}}>{error}</span>
 </div>
 
-<button type='submit' className="formbold-btn">
+<button type='submit' className="formbold-btn post">
             Post the paper for review
         </button>
     </form>
   </div>
 </div>
 
-<div className='container'>
+<div className='containerx'>
 <Link to='/status'><button id='button'className="container2 pub" role="button">Status</button></Link>
 </div>
 </div>

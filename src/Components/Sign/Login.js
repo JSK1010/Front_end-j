@@ -53,11 +53,11 @@ async function handleClick(event){
 }
   return (
     <div className='publication'>
-        <div className='content'>
+        <div className='content resp_reg'>
           
         <form>
         <h3 className='sign'>Log in</h3>
-        <div className="mb-3 email">
+        <div className="email">
           <label>Email address</label>
           <input
           onChange={handleChange}
@@ -68,7 +68,7 @@ async function handleClick(event){
             placeholder="Enter email"
           ></input>
         </div>
-        <div className="mb-3">
+        <div className="email">
           <label>Password</label>
           <input
           onChange={handleChangeP}

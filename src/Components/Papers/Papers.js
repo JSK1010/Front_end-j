@@ -266,12 +266,13 @@ async function checker() {
 
               <div className='col-lg-6 col-sm-12'>
               <label htmlFor="cars" className="formbold-form-label">Author Type</label>
-              <select name="cars" className="formbold-form-input" onChange={onAuthorType}>
+              <select name="cars" className="formbold-form-input" onChange={onAuthorType} required="required">
               <option value="">---select---</option>
   <option value="Student / Research Scholar">Student / Research Scholar</option>
   <option value="Faculty">Faculty</option>
   <option value="Industry">Industry</option>
   <option value="Others">Others</option>
+
 </select>
               
               
@@ -450,7 +451,7 @@ async function checker() {
             Post the paper for review
         </button>
         
-        <br></br>
+       
 <div className='status'>
 <Link to='/status'><button className="pub subm" role="button">Status</button></Link>
 </div>

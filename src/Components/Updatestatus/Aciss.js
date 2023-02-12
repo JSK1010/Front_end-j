@@ -141,7 +141,7 @@ useEffect(() => {
       localStorage.removeItem('token')
       navigate("/updatestatuslogin")
     } else {
-      if(user['username']=='devilprotocol007@gmail.com'){
+      if(user['username']=='admin@gmail.com'){
       console.log("token passed")
       populateQuote();
       }

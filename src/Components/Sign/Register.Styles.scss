@@ -23,16 +23,23 @@ $prime:#1C3879;
 
         .email{
             margin-top:3vh;   
-            font-weight: 500;         
+            font-weight: 500; 
+            font-size: 3vh;
+            margin-bottom:4vh;        
+        }
+        .emailinp{
+            margin-top: 1vh;
         }
         .emailinp:focus{
+            
             box-shadow: 1px 1px $prime;
             background-color: rgb(237, 237, 237);
-            font-weight: 1000;
+            font-weight: bold;
+
         }
 
         .emailinp::placeholder {
-            font-weight: 30;
+            font-weight: bolder;
             font-size: 2.3vh;
             opacity: 0.5;
             color: gray;
@@ -98,3 +105,8 @@ $prime:#1C3879;
 
 
 
+.resp_reg{
+    min-width:70%;
+    
+
+}
