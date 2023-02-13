@@ -37,7 +37,7 @@ function App() {
       <NavBar />
       <ImpDates />
       <Routes>
-        <Route path='/' exact element={<HomePage />} />
+        <Route path='/' exact element={<Login />} />
         <Route path='/call-for-paper' exact element={<CallForPaper />} />
         <Route path='/committee' exact element={<Committee />} />
         <Route path='/publication' exact element={<Publication />} />

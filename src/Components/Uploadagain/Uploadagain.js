@@ -100,18 +100,21 @@ async function checker() {
 
   const data = await req.json()
   if (data.status === 'ok') {
-    if(data.accept1 && data.accept2){
+    if(data.decision===true && data.waiting=='G'){
         
      navigate('/status')
     }
     else{
-      if(data.paper!='no'){
+      if(data.decision==true){
         navigate('/uploadagain')
       }
     }
     
   } else {
     console.log(data.status);
+    console.log("invalid")
+    localStorage.removeItem('token')
+    navigate("/login")
   }
 
 }
