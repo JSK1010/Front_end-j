@@ -1,8 +1,7 @@
 import './Uploadagain.Styles.scss'
-import { Link, Navigate, useLocation } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import jwt from 'jwt-decode'
-import FileBase64 from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
@@ -29,12 +28,7 @@ const [valid,setValid]=useState('');
   const [user, setUser] = useState('');
   const [file, setFile] = useState('');
   const [error, setError] = useState('');
-  const [uploadedFile, setUploadedFile] = useState({});
 
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [keyword, setKeyword] = useState('');
 
 
 const filechange = e =>{
@@ -59,7 +53,7 @@ const res=await axios.post('http://localhost:5000/uploadagain',formData,{
   'x-access-token': localStorage.getItem('token'),}
 });
 const {fileName , filePath}=res.data;
-setUploadedFile(fileName,filePath);
+
 setError('Uploaded')
 SetStatusColor('green');
 

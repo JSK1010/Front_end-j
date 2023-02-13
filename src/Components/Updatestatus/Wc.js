@@ -8,10 +8,7 @@ import FileDownload from 'js-file-download'
 const Wc = () => {
   const navigate = useNavigate();
 
-const [name,setName]=useState("");
-const [password,setPassword]=useState("");
-const[error,setError]=useState('');
-const [user, setUser] = useState('');
+
 const [valid,setValid]=useState('');
 const [email,setEmail]=useState('');
 
@@ -115,7 +112,6 @@ async function populateQuote() {
   const data = await req.json()
   if (data.status === 'ok') {
     setValid(true);
-    setUser(data.who.email);
     getpdfinfos();
   } else {
     setValid(false);

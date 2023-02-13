@@ -8,10 +8,7 @@ import FileDownload from 'js-file-download'
 const Ses = () => {
   const navigate = useNavigate();
 
-const [name,setName]=useState("");
-const [password,setPassword]=useState("");
-const[error,setError]=useState('');
-const [user, setUser] = useState('');
+
 const [valid,setValid]=useState('');
 const [email,setEmail]=useState('');
 
@@ -80,7 +77,7 @@ const getList = (count) => {
 function getpdf(e){
   const em = e.currentTarget.getAttribute("data-id")
   populateQuote();
-if(valid==true){
+if(valid===true){
 
   Axios({
     url:"http://localhost:5000/getpdf/"+em,
@@ -115,7 +112,6 @@ async function populateQuote() {
   
   if (data.status === 'ok') {
     setValid(true);
-    setUser(data.who.email);
     getpdfinfos();
   } else {
     setValid(false);
@@ -141,7 +137,7 @@ useEffect(() => {
       localStorage.removeItem('token')
       navigate("/updatestatuslogin")
     } else {
-      if(user['username']=='admin@gmail.com'){
+      if(user['username']==='admin@gmail.com'){
       console.log("token passed")
       populateQuote();
       }

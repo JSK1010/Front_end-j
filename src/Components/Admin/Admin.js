@@ -1,19 +1,13 @@
 import './Admin.Styles.scss'
-import { Link, Navigate, useLocation } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import jwt from 'jwt-decode'
-import FileBase64 from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
+
 
 const Login = () => {
   const navigate = useNavigate();
- 
-const [username,setUsername]=useState("");
-const [password,setPassword]=useState("");
-const[error,setError]=useState('');
+
 const [valid,setValid]=useState('');
-const [user, setUser] = useState('');
 const play="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true"
 
 
@@ -32,7 +26,6 @@ async function populateQuote() {
   const data = await req.json()
   if (data.status === 'ok') {
     setValid(true);
-    setUser(data.who.email);
   
   } else {
     setValid(false);
@@ -55,7 +48,7 @@ useEffect(() => {
       localStorage.removeItem('token')
       navigate("/updatestatuslogin")
     } else {
-      if(user['username']=='admin@gmail.com'){
+      if(user['username']==='admin@gmail.com'){
       console.log("token passed")
       populateQuote();
       }
@@ -74,34 +67,6 @@ useEffect(() => {
 
 
 
-async function handleClick(event){
-  event.preventDefault();
-  const response = await fetch("http://localhost:5000/reviewer", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        username,password
-      }),
-    })
-
-    const data = await response.json();
-    
-
-    if (data.user) {
-			localStorage.setItem('token', data.user)
-			alert('Login successful')
-			navigate('/reviewer');
-		} else {
-			setError("Invalid Credentials");
-		}
-
-
-}
   return (
     <div className='publication'>
         <div className='content'>

@@ -1,16 +1,15 @@
 import './Status.Styles.scss'
-import { Link, Navigate, useLocation } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import jwt from 'jwt-decode'
-import FileBase64 from 'react-file-base64';
+
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
+
 
 const Publication = () => {
   const navigate = useNavigate();
 
   const [valid,setValid]=useState('');
-  const [user, setUser] = useState('');
+
 
 
 const[decision,setDecision]=useState(false);
@@ -27,7 +26,7 @@ async function getComments() {
 
   const data = await req.json()
   if (data.status === 'ok') {
-    if(data.warning=='R'){
+    if(data.warning==='R'){
       setWarning('Your paper has been rejected, please correct the form with new details');
     }
     else{setWarning(data.warning);}
@@ -62,7 +61,6 @@ async function getComments() {
 		const data = await req.json()
 		if (data.status === 'ok') {
 			setValid(true);
-      setUser(data.who.email);
       getComments();
 		} else {
 			setValid(false);

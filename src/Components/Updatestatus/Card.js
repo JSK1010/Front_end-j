@@ -1,8 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 const Card = (props) => {
-  const navigate = useNavigate();
-
 
   const [message, setMessage] = useState('');
   const [color, setColor] = useState('');
@@ -16,14 +13,14 @@ const Card = (props) => {
 
   
   function major(){
-    let text;
-  if (window.confirm("Fill up the Revision box for Major Revision") == true) {
+
+  if (window.confirm("Fill up the Revision box for Major Revision") === true) {
     majorc();
   } 
   }
 
 async function majorc(){
-  const req = await fetch('http://localhost:5000/warning/major', {
+    await fetch('http://localhost:5000/warning/major', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email,
@@ -35,15 +32,14 @@ async function majorc(){
 }
 
 function finalized(){
-  let text;
-if (window.confirm("Are you sure to finalize this paper !") == true) {
+if (window.confirm("Are you sure to finalize this paper !") === true) {
   finalizedc();
 } 
 }
 
 
 async function finalizedc(){
-  const req = await fetch('http://localhost:5000/finalized', {
+    await fetch('http://localhost:5000/finalized', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email
@@ -55,15 +51,14 @@ async function finalizedc(){
 
 
 function minor(){
-  let text;
-if (window.confirm("Fill up the Revision box for Minor Revision") == true) {
+if (window.confirm("Fill up the Revision box for Minor Revision") === true) {
   minorc();
 } 
 }
 
 
 async function minorc(){
-  const req = await fetch('http://localhost:5000/warning/minor', {
+   await fetch('http://localhost:5000/warning/minor', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email,
@@ -77,15 +72,14 @@ async function accepted(){
   }
 
 function rejected(){
-  let text;
-if (window.confirm("Do you want to reject this paper?") == true) {
+if (window.confirm("Do you want to reject this paper?") === true) {
   rejectedc();
 } 
 }
 async function rejectedc(){
   
   setAccepted_warnings(false);
-  const req = await fetch('http://localhost:5000/paper_decision/false', {
+    await fetch('http://localhost:5000/paper_decision/false', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email,
@@ -105,15 +99,15 @@ async function getcolor(){
 
   const data = await req.json()
   
-  if(data.status=='ok'){
-    if(data.color=='B'){
+  if(data.status==='ok'){
+    if(data.color==='B'){
     setColor('blue')}
-    else if(data.color=='R')
+    else if(data.color==='R')
     {setColor('red')}
-    else if(data.color=='O'){
+    else if(data.color==='O'){
       setColor('orange')
     }
-    else if(data.color=='G'){
+    else if(data.color==='G'){
       setColor('green')
       setTouch('no')
     }
@@ -179,7 +173,7 @@ getcolor();
      <div className='col-lg-4'>
 
 
-     {touch=='no' ? (
+     {touch==='no' ? (
       <div className='rb1'>
         <h5>This paper has been accepted</h5>
       </div>
