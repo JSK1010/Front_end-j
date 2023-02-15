@@ -119,7 +119,7 @@ const onSubmit = async e=>{
 
   try{
 
-const res=await axios.post('http://localhost:3000/upload',formData,{
+const res=await axios.post('https://vit-vitecon-back.onrender.com/upload',formData,{
   headers:{'Content-Type': 'multipart/form-data'}
 });
 const {fileName , filePath}=res.data;
@@ -151,7 +151,7 @@ console.log({'fileName':fileName,'filepath':filePath})
 
 
 async function checker() {
-  const req = await fetch('http://localhost:5000/getComments', {
+  const req = await fetch('https://vit-vitecon-back.onrender.com/getComments', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -181,7 +181,7 @@ async function checker() {
 
 
 	async function populateQuote() {
-		const req = await fetch('http://localhost:5000/validation_papers', {
+		const req = await fetch('https://vit-vitecon-back.onrender.com/validation_papers', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

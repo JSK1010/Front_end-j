@@ -23,7 +23,7 @@ function handleChangeP(event){
 
 async function handleClick(event){
   event.preventDefault();
-  const response = await fetch("http://localhost:5000/done_signin_admin", {
+  const response = await fetch("https://vit-vitecon-back.onrender.com/done_signin_admin", {
       method: "POST",
       crossDomain: true,
       headers: {

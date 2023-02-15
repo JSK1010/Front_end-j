@@ -46,30 +46,31 @@ const onSubmit = async e=>{
   formData.append('file',file);
   formData.append('user',user);
   try{
-
-const res=await axios.post('http://localhost:5000/uploadagain',formData,{
-  
-  headers:{'Content-Type': 'multipart/form-data',
+const res=await axios.post('https://vit-vitecon-back.onrender.com/uploadagain',formData,{
+  headers:{'Content-Type': 'application/x-www-form-urlencoded',
   'x-access-token': localStorage.getItem('token'),}
 });
 const {fileName , filePath}=res.data;
-
+if(fileName===undefined){
+  throw res.data;
+}
 setError('Uploaded')
 SetStatusColor('green');
 
 console.log({'fileName':fileName,'filepath':filePath})
 
   }catch(err){
+    console.log(err['error'])
 
-    if(err.response.status === 500){
+    if(err['error'] === 500){
       console.log('Problem with server');
     }
-    else if(err.response.status === 600){
+    else if(err['error'] === 600){
       console.log('Only pdfs are allowed');
       setError('Only Pdf');
       SetStatusColor('red');
     }
-    else if(err.response.status === 700){
+    else if(err['error'] === 700){
       console.log("invalid")
       navigate("/login")
     }
@@ -86,7 +87,7 @@ console.log({'fileName':fileName,'filepath':filePath})
 
 
 async function checker() {
-  const req = await fetch('http://localhost:5000/getComments', {
+  const req = await fetch('https://vit-vitecon-back.onrender.com/getComments', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -117,7 +118,7 @@ async function checker() {
 
 
 	async function populateQuote() {
-		const req = await fetch('http://localhost:5000/validation_papers', {
+		const req = await fetch('https://vit-vitecon-back.onrender.com/validation_papers', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

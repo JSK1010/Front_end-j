@@ -17,7 +17,7 @@ function review1(revert){
 
 
 async function populateQuote() {
-  const req = await fetch('http://localhost:5000/validation_papers', {
+  const req = await fetch('https://vit-vitecon-back.onrender.com/validation_papers', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
