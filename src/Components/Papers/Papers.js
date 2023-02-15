@@ -122,7 +122,12 @@ const onSubmit = async e=>{
 const res=await axios.post('https://vit-vitecon-back.onrender.com/upload',formData,{
   headers:{'Content-Type': 'multipart/form-data'}
 });
+
 const {fileName , filePath}=res.data;
+
+if(fileName===undefined){
+  throw res.data;
+}
 setUploadedFile(fileName,filePath);
 setError('Uploaded')
 SetStatusColor('green');
@@ -131,11 +136,11 @@ console.log({'fileName':fileName,'filepath':filePath})
 
   }catch(err){
 
-    if(err.response.status === 500){
+    if(err['error'] === 500){
       console.log('Problem with server');
       console.log(err);
     }
-    if(err.response.status === 600){
+    if(err['error'] === 600){
       console.log('Only pdfs are allowed');
       setError('Only Pdf');
       SetStatusColor('red');
