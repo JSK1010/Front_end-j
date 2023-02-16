@@ -1,7 +1,8 @@
 import './Status.Styles.scss'
 import React, { useEffect, useState } from 'react'
 import jwt from 'jwt-decode'
-
+import Axios from 'axios';
+import FileDownload from 'js-file-download'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -15,10 +16,39 @@ const Publication = () => {
 const[decision,setDecision]=useState(false);
 const[warning,setWarning]=useState('');
 const[revision,setRevision]=useState('');
-const[check,setCheck]=useState('');
+const[user,setUser]=useState('');
+
+
+function paperdownload(){
+ 
+  populateQuote();
+if(valid===true){
+console.log(user)
+  Axios({
+    url:process.env.REACT_APP_hosting+"/getpdf/"+user,
+    method:"GET",
+    responseType:'blob'
+  }).then((res)=>{
+    const file = new Blob(
+      [res.data], 
+      {type: 'application/pdf'});
+//Build a URL from the file
+    const fileURL = URL.createObjectURL(file);
+//Open the URL on new Window
+    FileDownload(res.data,user+'.pdf')
+    
+  })
+}
+else{
+
+navigate('/login')
+}
+}
+
+
 
 async function getComments() {
-  const req = await fetch('https://vit-vitecon-back.onrender.com/getComments', {
+  const req = await fetch(process.env.REACT_APP_hosting+'/getComments', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -52,7 +82,7 @@ async function getComments() {
 
 
 	async function populateQuote() {
-		const req = await fetch('https://vit-vitecon-back.onrender.com/validation_papers', {
+		const req = await fetch(process.env.REACT_APP_hosting+'/validation_papers', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},
@@ -75,7 +105,8 @@ async function getComments() {
 		if (token) {
       
 			const user = jwt(token)
-      console.log(user['username'])
+      setUser(user['username'])
+
 			if (!user) {
         console.log("invalid")
 				localStorage.removeItem('token')
@@ -131,8 +162,16 @@ async function getComments() {
           
          
         </div>
-       
+
+        {decision==='ACCEPTED' ? (
+      <div className=''>
+        <button className='btn btn-lg btn-primary' onClick={paperdownload}>check your paper here</button>
     
+      </div>
+     ):(
+     <div>
+      </div>)}
+      
 
    
 

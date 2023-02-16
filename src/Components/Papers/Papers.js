@@ -6,6 +6,7 @@ import FileBase64 from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
+
 const Papers = () => {
   const navigate = useNavigate();
   // const [selectedFile, setSelectedFile] = useState();
@@ -119,7 +120,7 @@ const onSubmit = async e=>{
 
   try{
 
-const res=await axios.post('https://vit-vitecon-back.onrender.com/upload',formData,{
+const res=await axios.post(process.env.REACT_APP_hosting+'/upload',formData,{
   headers:{'Content-Type': 'multipart/form-data'}
 });
 
@@ -156,7 +157,7 @@ console.log({'fileName':fileName,'filepath':filePath})
 
 
 async function checker() {
-  const req = await fetch('https://vit-vitecon-back.onrender.com/getComments', {
+  const req = await fetch(process.env.REACT_APP_hosting+'/getComments', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -186,7 +187,7 @@ async function checker() {
 
 
 	async function populateQuote() {
-		const req = await fetch('https://vit-vitecon-back.onrender.com/validation_papers', {
+		const req = await fetch(process.env.REACT_APP_hosting+'/validation_papers', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

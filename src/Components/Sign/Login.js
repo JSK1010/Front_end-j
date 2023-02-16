@@ -25,8 +25,7 @@ function handleChangeP(event){
 
 async function handleClick(event){
   event.preventDefault();
-  
-  const url="https://vit-vitecon-back.onrender.com/done_signin"
+  const url=process.env.REACT_APP_hosting+"/done_signin"
   const response = await fetch(url, {
       method: "POST",
       crossDomain: true,

@@ -24,7 +24,7 @@ const focus=e=>
 
 async function handleClick(event){
   event.preventDefault();
-  const response = await fetch("https://vit-vitecon-back.onrender.com/done_signup", {
+  const response = await fetch(process.env.REACT_APP_hosting+"/done_signup", {
       method: "POST",
       crossDomain: true,
       headers: {

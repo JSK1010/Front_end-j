@@ -28,7 +28,7 @@ async function getpdfinfos() {
 
 
   
-  const req = await fetch('https://vit-vitecon-back.onrender.com/getpdfinfos', {
+  const req = await fetch(process.env.REACT_APP_hosting+'/getpdfinfos', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -80,7 +80,7 @@ function getpdf(e){
 if(valid===true){
 
   Axios({
-    url:"https://vit-vitecon-back.onrender.com/getpdf/"+em,
+    url:process.env.REACT_APP_hosting+"/getpdf/"+em,
     method:"GET",
     responseType:'blob'
   }).then((res)=>{
@@ -102,7 +102,7 @@ navigate('/updatestatuslogin')
 
 
 async function populateQuote() {
-  const req = await fetch('https://vit-vitecon-back.onrender.com/validation_papers', {
+  const req = await fetch(process.env.REACT_APP_hosting+'/validation_papers', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
