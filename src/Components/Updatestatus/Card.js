@@ -28,7 +28,7 @@ async function majorc(){
     },
   });
 
-  
+  window.location.reload();
 }
 
 function finalized(){
@@ -45,6 +45,7 @@ async function finalizedc(){
       'user':props.email
     },
   });
+  window.location.reload();
 
   
 }
@@ -65,6 +66,7 @@ async function minorc(){
       'body': JSON.stringify(message)
     },
   });
+  window.location.reload();
 }
 
 async function accepted(){
@@ -86,6 +88,7 @@ async function rejectedc(){
       'body': JSON.stringify(message)
     },
   });
+  window.location.reload();
 
 }
 

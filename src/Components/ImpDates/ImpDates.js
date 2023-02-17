@@ -8,7 +8,14 @@ const ImpDates = () => {
     const handleClick = () => {
         setOpen(true)
     }
-
+       
+async function logout() {
+    const token = localStorage.getItem('token')
+		if (token) {
+    localStorage.removeItem('token')
+    window.location.reload();
+        }
+}
     const toggleDrawer = (opened) => (event) => {
         if (
             event &&
@@ -22,7 +29,7 @@ const ImpDates = () => {
 
     return (
         <>
-            <button onClick={handleClick} className='imp-dates-btn'>&#8592; Important Dates</button>
+            <button onClick={handleClick} className='imp-dates-btn'>&#8592;LOGOUT</button>
             <SwipeableDrawer
                 anchor="right"
                 open={open}
@@ -32,29 +39,11 @@ const ImpDates = () => {
                 <div className='imp-dates-container'>
                     <div className='dates'>
                         <div className='date'>
-                            <div className='date-heading'>Paper Submission Deadline</div>
-                            <div className='date-value'>15th March, 2023</div>
+                            <button onClick={logout} className='btn btn-sm btn-danger'>LOGOUT</button>
                         </div>
-                        <div className='date'>
-                            <div className='date-heading'>Notification of Acceptance</div>
-                            <div className='date-value'>25th March, 2023</div>
-                        </div>
-                        <div className='date'>
-                            <div className='date-heading'>Author Registration</div>
-                            <div className='date-value'>8th April, 2023</div>
-                        </div>
-                        <div className='date'>
-                            <div className='date-heading'>Conference Date</div>
-                            <div className='date-value'>5th - 6th May, 2023</div>
-                        </div>
+                       
                     </div>
-                    <div className='contacts'>
-                        <div className='contact'>
-                            <div className='name'>Dr. THANIKAISELVAN V</div>
-                            <div className='email'>convenor.vitecon@vit.ac.in</div>
-                            <div className='phone'>+91 8807717720</div>
-                        </div>
-                    </div>
+                   
                 </div>
             </SwipeableDrawer>
         </>

@@ -121,7 +121,8 @@ const onSubmit = async e=>{
   try{
 
 const res=await axios.post(process.env.REACT_APP_hosting+'/upload',formData,{
-  headers:{'Content-Type': 'multipart/form-data'}
+  headers:{'Content-Type': 'multipart/form-data',
+  'x-access-token': localStorage.getItem('token')}
 });
 
 const {fileName , filePath}=res.data;
@@ -162,8 +163,11 @@ async function checker() {
       'x-access-token': localStorage.getItem('token'),
     },
   })
+  
 
   const data = await req.json()
+  console.log('FROM CHECKER')
+  console.log(data)
   if (data.status == 'ok') {
     
     if(data.waiting=='G'){
