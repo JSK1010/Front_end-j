@@ -428,7 +428,7 @@ async function checker() {
       <label htmlFor="email" className="formbold-form-label">Domain of the Paper</label>
       <select name="paperDomain" id="paperDomain" className="formbold-form-input" required="required" onChange={onDomain}>
                                         <option value="">---select---</option>
-                                        <option value="SES">Smart Electronics Systems</option><option value="WC">Wireless Communication</option><option value="NGN">Next Generation Wireless Networks</option><option value="SARF">Smart Antenna and RF Technologies for next generation Communication</option><option value="SIP">Signal and Image Processing</option><option value="ACISS">Advanced Computing and Information Systems Security</option><option value="WIE">Women in Engineering</option>                                    </select>
+                                        <option value="SES">Smart Electronics Systems</option><option value="NGWCT">Next Generation Wireless Communication Techniques</option><option value="AWN">Advanced Wireless Network</option><option value="SARF">Smart Antenna and RF Technologies for next generation Communication</option><option value="SIP">Signal and Image Processing</option><option value="ACISS">Advanced Computing and Information Systems Security</option><option value="WIE">Women in Engineering</option>                                    </select>
     
       </div>
 

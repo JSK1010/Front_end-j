@@ -5,9 +5,8 @@ import jwt from 'jwt-decode'
 import Card from './Card';
 import Axios from 'axios';
 import FileDownload from 'js-file-download'
-const Wc = () => {
+const Ngn = () => {
   const navigate = useNavigate();
-
 
 const [valid,setValid]=useState('');
 const [email,setEmail]=useState('');
@@ -23,11 +22,12 @@ const [Coauthors, setCoauthors] = useState('');
 const [Coauthors_Affiliation, setCoauthors_Affiliation] = useState('');
 const [Paper_Title, setPaper_Title] = useState('');
 const [Domain, setDomain] = useState('');
+const [Pdfid, setPdfid] = useState('');
 //////
 
 async function getpdfinfos() {
 
-
+  
   
   const req = await fetch(process.env.REACT_APP_hosting+'/getpdfinfos', {
     headers: {
@@ -50,8 +50,10 @@ async function getpdfinfos() {
    setCoauthors_Affiliation(data.Affiliation);
    setPaper_Title(data.Paper_Title);
    setDomain(data.Domain);
+   setPdfid(data.Pdfid)
   
   }
+  
   
   
   else{
@@ -67,8 +69,8 @@ const getList = (count) => {
 
   for(let i = 0; i < count; i++){
   
-    if(Domain[i]==='WC'){
-      arr.push(<Card email={email[i]} Author_Name={Author_Name[i]} Author_Type={Author_Type[i]} Institution={Institution[i]} Address={Address[i]} onc={getpdf} Mobile={Mobile[i]} IEEE_no={IEEE_No[i]} Coauthors={Coauthors[i]} Affiliation={Coauthors_Affiliation[i]} Paper_Title={Paper_Title[i]} Domain={Domain[i]} />)
+    if(Domain[i]==='AWN'){
+      arr.push(<Card email={email[i]} Author_Name={Author_Name[i]} Author_Type={Author_Type[i]} Institution={Institution[i]} Address={Address[i]} onc={getpdf} Mobile={Mobile[i]} IEEE_no={IEEE_No[i]} Coauthors={Coauthors[i]} Affiliation={Coauthors_Affiliation[i]} Paper_Title={Paper_Title[i]} Domain={Domain[i]} Pdfid={Pdfid[i]} />)
 }
   }
   return arr;
@@ -77,9 +79,10 @@ const getList = (count) => {
 
 function getpdf(e){
   const em = e.currentTarget.getAttribute("data-id")
+  const down = e.currentTarget.getAttribute("pdfid")
   populateQuote();
-if(valid==true){
-
+if(valid===true){
+  
   Axios({
     url:process.env.REACT_APP_hosting+"/getpdf/"+em,
     method:"GET",
@@ -91,7 +94,7 @@ if(valid==true){
 //Build a URL from the file
     const fileURL = URL.createObjectURL(file);
 //Open the URL on new Window
-    FileDownload(res.data,em+'.pdf')
+FileDownload(res.data,"AWN"+down+'.pdf')
     
   })
 }
@@ -108,11 +111,11 @@ async function populateQuote() {
       'x-access-token': localStorage.getItem('token'),
     },
   })
-
+  
   const data = await req.json()
   if (data.status === 'ok') {
     setValid(true);
-    getpdfinfos();
+     getpdfinfos();
   } else {
     setValid(false);
     navigate('/login');
@@ -129,7 +132,7 @@ async function populateQuote() {
 useEffect(() => {
   const token = localStorage.getItem('token')
   if (token) {
-    
+   
     const user = jwt(token)
     console.log(user['username'])
     if (!user) {
@@ -137,7 +140,7 @@ useEffect(() => {
       localStorage.removeItem('token')
       navigate("/updatestatuslogin")
     } else {
-      if(user['username']=='admin@gmail.com'){
+      if(user['username']==='admin@gmail.com'){
       console.log("token passed")
       populateQuote();
       }
@@ -175,4 +178,4 @@ useEffect(() => {
       )
   
   }
-export default Wc ;
+export default Ngn ;

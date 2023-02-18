@@ -158,7 +158,7 @@ getcolor();
      <h5><span className='Q'>Co-Author Affiliation : </span>{props.Affiliation}</h5>
      <h5><span className='Q'>Paper Title:</span> {props.Paper_Title}</h5>
      <h5><span className='Q'>Domain of the Paper: </span>{props.Domain}</h5>
-     <h5><span className='Q'>Download the Paper  : </span><a className='download' onClick={props.onc} data-id={props.email}>Click Here</a></h5>
+     <h5><span className='Q'>Download the Paper  : </span><a className='download' onClick={props.onc} pdfid={props.Pdfid}data-id={props.email}>Click Here</a></h5>
      </div>
 
 

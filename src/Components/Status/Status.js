@@ -16,18 +16,25 @@ const Publication = () => {
 const[decision,setDecision]=useState(false);
 const[warning,setWarning]=useState('');
 const[revision,setRevision]=useState('');
+const[pdf,setPdf]=useState('');
 const[user,setUser]=useState('');
 
 
-function paperdownload(){
+async function paperdownload(){
  
   populateQuote();
+
+
 if(valid===true){
-console.log(user)
+
+
   Axios({
     url:process.env.REACT_APP_hosting+"/getpdf/"+user,
     method:"GET",
-    responseType:'blob'
+    responseType:'blob',
+    headers: {
+      'x-access-token': localStorage.getItem('token'),
+    }
   }).then((res)=>{
     const file = new Blob(
       [res.data], 
@@ -35,7 +42,7 @@ console.log(user)
 //Build a URL from the file
     const fileURL = URL.createObjectURL(file);
 //Open the URL on new Window
-    FileDownload(res.data,user+'.pdf')
+    FileDownload(res.data,pdf+'.pdf')
     
   })
 }
@@ -46,6 +53,23 @@ navigate('/login')
 }
 
 
+async function mypdfinfo(){
+  const req = await fetch(process.env.REACT_APP_hosting+'/mypdfinfo', {
+    headers: {
+      'x-access-token': localStorage.getItem('token'),
+      
+    },
+  })
+
+  const data = await req.json()
+  if (data.status === 'ok') {
+     setPdf(data.paperid)
+    
+  }
+  else{
+    setPdf("error")
+  }
+}
 
 async function getComments() {
   const req = await fetch(process.env.REACT_APP_hosting+'/getComments', {
@@ -73,7 +97,7 @@ async function getComments() {
   } else {
     console.log(data.status);
   }
-
+mypdfinfo()
 }
 
 
@@ -163,7 +187,7 @@ async function getComments() {
          
         </div>
 
-        {decision==='ACCEPTED' ? (
+        {pdf!=0 ? (
       <div className=''>
         <button className='btn btn-lg btn-primary' onClick={paperdownload}>check your paper here</button>
     
