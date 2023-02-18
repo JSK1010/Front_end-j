@@ -8,14 +8,14 @@ const ImpDates = () => {
     const handleClick = () => {
         setOpen(true)
     }
-       
-async function logout() {
-    const token = localStorage.getItem('token')
-		if (token) {
-    localStorage.removeItem('token')
-    window.location.reload();
+
+    async function logout() {
+        const token = localStorage.getItem('token')
+        if (token) {
+            localStorage.removeItem('token')
+            window.location.reload();
         }
-}
+    }
     const toggleDrawer = (opened) => (event) => {
         if (
             event &&
@@ -35,15 +35,15 @@ async function logout() {
                 open={open}
                 onClose={toggleDrawer(false)}
                 onOpen={toggleDrawer(true)}
-                >
+            >
                 <div className='imp-dates-container'>
                     <div className='dates'>
                         <div className='date'>
                             <button onClick={logout} className='btn btn-sm btn-danger'>LOGOUT</button>
                         </div>
-                       
+
                     </div>
-                   
+
                 </div>
             </SwipeableDrawer>
         </>

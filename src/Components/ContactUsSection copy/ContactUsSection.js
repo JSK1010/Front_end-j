@@ -1,7 +1,6 @@
 import React from 'react';
 import { FiPhoneCall, FiMapPin, FiMail } from 'react-icons/fi';
 import './ContactUsSection.Styles.scss';
-import logo from '../../Assets/images/logo-white.png'
 
 const ContactUsSection = () => {
   return (
@@ -38,7 +37,7 @@ const ContactUsSection = () => {
       <div className='details'>
         <div className='company-text' data-aos="fade-up">
           <div className='logo'>
-            <img src={logo} alt='logo' />
+            {/* <img src={logo} alt='logo' /> */}
           </div>
         </div>
         <div className='subscribe' data-aos="fade-up">

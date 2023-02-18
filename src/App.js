@@ -1,16 +1,8 @@
-
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './Components/Homepage/HomePage';
-import NavBar from './Components/Navbar/NavBar';
 import ContactUsSection from './Components/ContactUsSection copy/ContactUsSection';
-import CallForPaper from './Components/CallForPaper/CallForPaper';
-import Committee from './Components/Committee/Committee';
-import Keynote from './Components/Keynote/Keynote';
 
 ////ADDED
-import Publication from './Components/Publication/Publication';
-import Publish from './Components/Publish/Publish';
 import Papers from './Components/Papers/Papers';
 import Status from './Components/Status/Status';
 import Login from './Components/Sign/Login';
@@ -29,21 +21,14 @@ import Wie from './Components/Updatestatus/Wie';
 
 ///////
 
-import Registration from './Components/Registration/Registration';
 import ImpDates from './Components/ImpDates/ImpDates';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <ImpDates />
       <Routes>
         <Route path='/' exact element={<Login />} />
-        <Route path='/call-for-paper' exact element={<CallForPaper />} />
-        <Route path='/committee' exact element={<Committee />} />
-        <Route path='/publication' exact element={<Publication />} />
-        <Route path='/publish' exact element={<Publish />} />
-        <Route path='/registration' exact element={<Registration />} />
         <Route path='/papers' exact element={<Papers />} />
         <Route path='/uploadagain' exact element={<Uploadagain />} />
         <Route path='/login' exact element={<Login />} />
