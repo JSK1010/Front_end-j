@@ -23,6 +23,8 @@ const [Coauthors, setCoauthors] = useState('');
 const [Coauthors_Affiliation, setCoauthors_Affiliation] = useState('');
 const [Paper_Title, setPaper_Title] = useState('');
 const [Domain, setDomain] = useState('');
+const [Pdfid, setPdfid] = useState('');
+
 //////
 
 async function getpdfinfos() {
@@ -50,6 +52,7 @@ async function getpdfinfos() {
    setCoauthors_Affiliation(data.Affiliation);
    setPaper_Title(data.Paper_Title);
    setDomain(data.Domain);
+   setPdfid(data.Pdfid)
   
   }
   
@@ -67,7 +70,7 @@ const getList = (count) => {
 
   for(let i = 0; i < count; i++){
     if(Domain[i]==='SES'){
-        arr.push(<Card email={email[i]} Author_Name={Author_Name[i]} Author_Type={Author_Type[i]} Institution={Institution[i]} Address={Address[i]} onc={getpdf} Mobile={Mobile[i]} IEEE_no={IEEE_No[i]} Coauthors={Coauthors[i]} Affiliation={Coauthors_Affiliation[i]} Paper_Title={Paper_Title[i]} Domain={Domain[i]} />)
+        arr.push(<Card email={email[i]} Author_Name={Author_Name[i]} Author_Type={Author_Type[i]} Institution={Institution[i]} Address={Address[i]} onc={getpdf} Mobile={Mobile[i]} IEEE_no={IEEE_No[i]} Coauthors={Coauthors[i]} Affiliation={Coauthors_Affiliation[i]} Paper_Title={Paper_Title[i]} Domain={Domain[i]} Pdfid={Pdfid[i]}/>)
   }
 }
   return arr;
@@ -76,6 +79,7 @@ const getList = (count) => {
 
 function getpdf(e){
   const em = e.currentTarget.getAttribute("data-id")
+  const down = e.currentTarget.getAttribute("pdfid")
   populateQuote();
 if(valid===true){
 
@@ -90,7 +94,7 @@ if(valid===true){
 //Build a URL from the file
     const fileURL = URL.createObjectURL(file);
 //Open the URL on new Window
-    FileDownload(res.data,em+'.pdf')
+FileDownload(res.data,"SES"+down+'.pdf')
     
   })
 }

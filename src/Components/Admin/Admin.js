@@ -77,13 +77,13 @@ useEffect(() => {
     <a className='alink' href="#">Smart Electronic Systems</a>
   </div>
 
-  <div class="button" onClick={() => review1('Wc')} id="button-7">
+  <div class="button" onClick={() => review1('Ngwct')} id="button-7">
     <div id="dub-arrow"><img src={play} alt="" /></div>
-    <a className='alink' href="#">Wireless Communication</a>
+    <a className='alink' href="#">Next Generation Wireless Communication Techniques</a>
   </div>
-  <div class="button" onClick={() => review1('Ngn')} id="button-7">
+  <div class="button" onClick={() => review1('Awn')} id="button-7">
     <div id="dub-arrow"><img src={play} alt="" /></div>
-    <a className='alink' href="#">Next Generation Wireless Networks</a>
+    <a className='alink' href="#">Advanced Wireless Network</a>
   </div>
   <div class="button" onClick={() => review1('Sarf')} id="button-7">
     <div id="dub-arrow"><img src={play} alt="" /></div>

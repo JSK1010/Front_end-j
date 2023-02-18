@@ -6,7 +6,7 @@ import NavBar from './Components/Navbar/NavBar';
 import ContactUsSection from './Components/ContactUsSection copy/ContactUsSection';
 import CallForPaper from './Components/CallForPaper/CallForPaper';
 import Committee from './Components/Committee/Committee';
-import Keynote from './Components/Keynote/Keynote';
+
 
 ////ADDED
 import Publication from './Components/Publication/Publication';
@@ -19,8 +19,8 @@ import Uploadagain from './Components/Uploadagain/Uploadagain';
 import Admin from './Components/Admin/Admin';
 import Updatestatuslogin from './Components/Updatestatuslogin/Updatestatuslogin';
 import Ses from './Components/Updatestatus/Ses';
-import Wc from './Components/Updatestatus/Wc';
-import Ngn from './Components/Updatestatus/Ngn';
+import Ngwct from './Components/Updatestatus/Ngwct';
+import Awn from './Components/Updatestatus/Awn';
 import Sarf from './Components/Updatestatus/Sarf';
 import Sip from './Components/Updatestatus/Sip';
 import Aciss from './Components/Updatestatus/Aciss';
@@ -52,8 +52,8 @@ function App() {
         <Route path='/status' exact element={<Status />} />
         <Route path='/updatestatuslogin' exact element={<Updatestatuslogin />} />
         <Route path='/Ses' exact element={<Ses/>} />
-        <Route path='/Wc' exact element={<Wc/>} />
-        <Route path='/Ngn' exact element={<Ngn/>} />
+        <Route path='/Ngwct' exact element={<Ngwct/>} />
+        <Route path='/Awn' exact element={<Awn/>} />
         <Route path='/Sarf' exact element={<Sarf/>} />
         <Route path='/Sip' exact element={<Sip/>} />
         <Route path='/Aciss' exact element={<Aciss/>} />
