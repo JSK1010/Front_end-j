@@ -24,7 +24,7 @@ const focus=e=>
 
 async function handleClick(event){
   event.preventDefault();
-  const response = await fetch(process.env.REACT_APP_hosting+"/done_signup", {
+  const response = await fetch(process.env.REACT_APP_hosting+"/verifygenerator", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -40,7 +40,7 @@ async function handleClick(event){
     const data = await response.json();
     if (data.status === 'ok') {
       console.log(data);
-      navigate('/login');
+      navigate('/verify');
 		}
     else{
       SetError(data.status);

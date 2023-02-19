@@ -8,6 +8,7 @@ import Papers from './Components/Papers/Papers';
 import Status from './Components/Status/Status';
 import Login from './Components/Sign/Login';
 import Register from './Components/Sign/Register';
+import Verify from './Components/Sign/Verify';
 import Uploadagain from './Components/Uploadagain/Uploadagain';
 import Admin from './Components/Admin/Admin';
 import Updatestatuslogin from './Components/Updatestatuslogin/Updatestatuslogin';
@@ -34,6 +35,7 @@ function App() {
         <Route path='/uploadagain' exact element={<Uploadagain />} />
         <Route path='/login' exact element={<Login />} />
         <Route path='/register' exact element={<Register />} />
+        <Route path='/verify' exact element={<Verify />} />
         <Route path='/Admin' exact element={<Admin />} />
         <Route path='/status' exact element={<Status />} />
         <Route path='/updatestatuslogin' exact element={<Updatestatuslogin />} />
