@@ -19,6 +19,7 @@ import Sarf from './Components/Updatestatus/Sarf';
 import Sip from './Components/Updatestatus/Sip';
 import Aciss from './Components/Updatestatus/Aciss';
 import Wie from './Components/Updatestatus/Wie';
+import ForgotPasswordForm from './Components/ForgotPassword/ForgotPasswordForm';
 
 
 ///////
@@ -35,6 +36,7 @@ function App() {
         <Route path='/uploadagain' exact element={<Uploadagain />} />
         <Route path='/login' exact element={<Login />} />
         <Route path='/register' exact element={<Register />} />
+        <Route path='/forgotPassword' exact element={<ForgotPasswordForm />} />
         <Route path='/verify' exact element={<Verify />} />
         <Route path='/Admin' exact element={<Admin />} />
         <Route path='/status' exact element={<Status />} />

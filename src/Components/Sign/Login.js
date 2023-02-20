@@ -46,7 +46,11 @@ async function handleClick(event){
 			localStorage.setItem('token', data.user)
 			alert('Login successful')
 			navigate('/papers')
-		} else {
+		}
+    else if(data.message == 'User not verified') {
+      setError("Email not verified");
+    } 
+    else {
 			setError("Invalid Credentials");
 		}
 
