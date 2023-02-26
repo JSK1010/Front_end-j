@@ -267,6 +267,7 @@ async function checker() {
               type="text"
               name="Author Name"
               id="Author Name"
+              pattern="[a-zA-Z]*"
               placeholder=""
               onChange={onAuthorName}
               className="formbold-form-input"
@@ -305,6 +306,7 @@ async function checker() {
       type="text"
       name="Name of the Institution / Organization"
       placeholder=""
+      pattern="[a-zA-Z]*"
       onChange={onInstitution}
       className="formbold-form-input"
       />   
@@ -317,6 +319,7 @@ async function checker() {
       required
       name="Institution / Organization Address"
       placeholder=""
+      pattern="[a-zA-Z]*"
       onChange={onAddress}
       className="formbold-form-input"
       />
@@ -340,6 +343,8 @@ async function checker() {
       required
       type="text"
       name="Mobile No"
+      pattern="[1-9]{1}[0-9]{9}"
+      maxlength='10'
       placeholder=""
       onChange={onMobile}
       className="formbold-form-input"
@@ -352,7 +357,9 @@ async function checker() {
       <input
       required
       name="IEEE Membership No."
+      type="text"
       placeholder=""
+      pattern="[0-9]*"
       onChange={onIEEE}
       className="formbold-form-input"
       />
@@ -377,7 +384,7 @@ async function checker() {
       required
       type="text"
       name="List of Co-Author Name (Comma Separated)"
-     
+      pattern="[a-zA-Z,]*"
       placeholder=""
       onChange={onCoauthor}
       className="formbold-form-input"
@@ -392,6 +399,7 @@ async function checker() {
       required
       name="Co-Author Affiliation (Comma Separated)"
       placeholder=""
+      pattern="[0-9,]*"
       onChange={onAffiliation}
       className="formbold-form-input"
       />
@@ -417,6 +425,7 @@ async function checker() {
       type="Paper Title"
       name="firstname"
       id="firstname"
+      pattern="[a-zA-Z0-9]*"
       placeholder=""
       onChange={onPaper}
       className="formbold-form-input"
