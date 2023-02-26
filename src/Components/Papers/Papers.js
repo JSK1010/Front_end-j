@@ -267,7 +267,7 @@ async function checker() {
               type="text"
               name="Author Name"
               id="Author Name"
-              pattern="[a-zA-Z]*"
+              pattern="[a-zA-Z ]*"
               placeholder=""
               onChange={onAuthorName}
               className="formbold-form-input"
