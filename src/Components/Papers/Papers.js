@@ -307,7 +307,6 @@ async function checker() {
       type="text"
       name="Name of the Institution / Organization"
       placeholder=""
-      pattern="[a-zA-Z]*"
       onChange={onInstitution}
       className="formbold-form-input"
       />   
@@ -320,7 +319,6 @@ async function checker() {
       required
       name="Institution / Organization Address"
       placeholder=""
-      pattern="[a-zA-Z]*"
       onChange={onAddress}
       className="formbold-form-input"
       />
@@ -344,8 +342,7 @@ async function checker() {
       required
       type="text"
       name="Mobile No"
-      pattern="[1-9]{1}[0-9]{9}"
-      maxlength='10'
+      pattern="[0-9]*"
       placeholder=""
       onChange={onMobile}
       className="formbold-form-input"
