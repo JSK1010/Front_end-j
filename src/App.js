@@ -20,7 +20,8 @@ import Sip from './Components/Updatestatus/Sip';
 import Aciss from './Components/Updatestatus/Aciss';
 import Wie from './Components/Updatestatus/Wie';
 import ForgotPasswordForm from './Components/ForgotPassword/ForgotPasswordForm';
-
+import Password from './Components/Sign/Password';
+import Newpassword from './Components/Sign/Newpassword';
 
 ///////
 
@@ -36,6 +37,8 @@ function App() {
         <Route path='/login' exact element={<Login />} />
         <Route path='/register' exact element={<Register />} />
         <Route path='/forgotPassword' exact element={<ForgotPasswordForm />} />
+        <Route path='/Password' exact element={<Password />} />
+        <Route path='/Newpassword' exact element={<Newpassword />} />
         <Route path='/verify' exact element={<Verify />} />
         <Route path='/Admin' exact element={<Admin />} />
         <Route path='/status' exact element={<Status />} />

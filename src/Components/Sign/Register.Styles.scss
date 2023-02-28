@@ -58,7 +58,20 @@ $prime: #1C3879;
             margin-bottom: 6vh;
             justify-content: center;
         }
+        .right {
+            justify-content: flex-end;
+            margin-top: 3vh;
+            margin-right:0 ;
+            a{
+text-decoration: none;
+color:black;
+font-weight:800;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
 
+        }
         .sub {
 
             justify-content: space-around;

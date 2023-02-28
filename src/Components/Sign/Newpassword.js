@@ -6,11 +6,11 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const navigate = useNavigate();
  
-const [username,setUsername]=useState("");
+const [otp,setOTP]=useState("");
 const [password,setPassword]=useState("");
 const[error,setError]=useState('');
 function handleChange(event){
-  setUsername(event.target.value);
+  setOTP(event.target.value);
 }
 
 
@@ -26,8 +26,8 @@ function handleChangeP(event){
 
 async function handleClick(event){
   event.preventDefault();
-  const url=process.env.REACT_APP_hosting+"/done_signin"
-  const response = await fetch(url, {
+  const url=process.env.REACT_APP_hosting+"/newPassword"
+  await fetch(url, {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -36,53 +36,61 @@ async function handleClick(event){
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
-        username,password
+        otp,password
       }),
-    })
+    }).then(async res => {
+      try{
+      var response=await res.json()
+      console.log(response.status) 
+      setError(response.status)
 
-    const data = await response.json();
+      
+      if(response.status=='New password is set!'){
+        alert(response.status)
+        navigate('/login')
+      }
+      }
+      catch{
+        setError('Something went wrong')
+       
+      }
+    
+    
+    })
+    
+}
     
 
-    if (data.user) {
-			localStorage.setItem('token', data.user)
-			alert('Login successful')
-			navigate('/papers')
-		}
-    else if(data.message == 'User not verified') {
-      setError("Email not verified");
-    } 
-    else {
-			setError("Invalid Credentials");
-		}
+  
 
 
-}
+
   return (
     <div className='publication'>
         <div className='content resp_reg'>
           
         <form>
-        <h3 className='sign'>Log in</h3>
+        <h3 className='sign'>Change Password</h3>
         <div className="email">
-          <label>Email address</label>
+          <label>OTP</label>
           <input
           onChange={handleChange}
             type="email"
-            name='username'
+            name='otp'
             onFocus={focus}
             className="form-control emailinp"
-            placeholder="Enter email"
+            placeholder=""
           ></input>
         </div>
         <div className="email">
-          <label>Password</label>
+          <label>New Password</label>
           <input
           onChange={handleChangeP}
             type="password"
             name='password'
             onFocus={focus}
             className="form-control emailinp"
-            placeholder="Enter password"
+            placeholder=""
           />
         </div>
         <div className='d-grid sub'>
@@ -90,17 +98,14 @@ async function handleClick(event){
        </div>
         <div className="d-grid sub">
           <button type="submit" onClick={handleClick} className="btn btn-primary">
-            Log in
+            Submit
           </button>
         </div>
-        <div className="d-grid right">
-<a href="/#/Password">Forgot password</a>
-        </div>
+        
 
       </form>
 
-      <p className='footer'>New User<Link className='link' to='/register'>Register</Link></p>
-
+   
 
 
 
