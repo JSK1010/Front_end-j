@@ -26,8 +26,7 @@ function handleChangeP(event){
 
 async function handleClick(event){
   event.preventDefault();
-  const url=process.env.REACT_APP_hosting+"/done_signin"
-  const response = await fetch(url, {
+    const response = await fetch(process.env.REACT_APP_hosting+"/done_signin", {
       method: "POST",
       crossDomain: true,
       headers: {
