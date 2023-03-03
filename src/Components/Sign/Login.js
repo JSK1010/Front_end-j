@@ -98,7 +98,7 @@ async function handleClick(event){
 
       </form>
 
-      <p className='footer'>New User<Link className='link' to='/register'>Register</Link></p>
+      <p className='footer'>New User ? <Link className='link blink' to='/register'>Register Here</Link></p>
 
 
 

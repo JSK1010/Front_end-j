@@ -70,7 +70,7 @@ useEffect(() => {
   return (
     <div className='publication'>
         <div className='content'>
-            <h1 className='heading-secondary'>Choose Your Role</h1>
+            <h1 className='heading-secondary'>Choose Your Domain</h1>
             <div id="containeradmin">
             <div class="button" onClick={() => review1('Ses')} id="button-7">
     <div id="dub-arrow"><img src={play} alt="" /></div>

@@ -5,7 +5,7 @@ import jwt from 'jwt-decode'
 import FileBase64 from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-import ImpDates from '../ImpDates/ImpDates';
+import ImpDates from '../Logout/Logout';
 
 
 const Papers = () => {
@@ -382,7 +382,7 @@ async function checker() {
       required
       type="text"
       name="List of Co-Author Name (Comma Separated)"
-      pattern="[a-zA-Z,]*"
+      pattern="[a-zA-Z, ]*"
       placeholder=""
       onChange={onCoauthor}
       className="formbold-form-input"
@@ -397,7 +397,7 @@ async function checker() {
       required
       name="Co-Author Affiliation (Comma Separated)"
       placeholder=""
-      pattern="[0-9,]*"
+      pattern="[0-9, ]*"
       onChange={onAffiliation}
       className="formbold-form-input"
       />
@@ -423,7 +423,7 @@ async function checker() {
       type="Paper Title"
       name="firstname"
       id="firstname"
-      pattern="[a-zA-Z0-9]*"
+      pattern="[a-zA-Z0-9 ]*"
       placeholder=""
       onChange={onPaper}
       className="formbold-form-input"

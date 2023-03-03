@@ -134,3 +134,21 @@ font-weight:800;
 
 
 }
+
+@keyframes blinking {
+  0% { color: #cf0e21; }
+  70% { color: #040421; }
+}
+ 
+/* (B) ATTACH BLINKING KEYFRAMES TO TEXT */
+.blink {
+  font-weight: bolder;
+  text-decoration:none;
+  animation: blinking 1s infinite;
+
+}
+.blink:hover{
+
+        text-decoration: underline;
+  
+}
