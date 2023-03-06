@@ -38,7 +38,7 @@ const Register = () => {
 
     const data = await response.json();
     if (data.status === 'ok') {
-      console.log(data);
+     // console.log(data);
       navigate('/verify');
     }
     else {

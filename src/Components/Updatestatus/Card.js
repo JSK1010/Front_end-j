@@ -8,7 +8,7 @@ const Card = (props) => {
 
   const handleMessageChange = event => {
     setMessage(event.target.value);
-    console.log(event.target.value);
+  
   };
 
   

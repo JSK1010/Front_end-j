@@ -57,25 +57,27 @@ if(fileName===undefined){
 setError('Uploaded')
 SetStatusColor('green');
 
-console.log({'fileName':fileName,'filepath':filePath})
+//console.log({'fileName':fileName,'filepath':filePath})
 
   }catch(err){
-    console.log(err['error'])
+    //console.log(err['error'])
 
     if(err['error'] === 500){
-      console.log('Problem with server');
+      //console.log('Problem with server');
+      setError('Problem with server');
+      SetStatusColor('red');
     }
     else if(err['error'] === 600){
-      console.log('Only pdfs are allowed');
+      //console.log('Only pdfs are allowed');
       setError('Only Pdf');
       SetStatusColor('red');
     }
     else if(err['error'] === 700){
-      console.log("invalid")
+      //console.log("invalid")
       navigate("/login")
     }
     else{
-        console.log("invalid")
+        //console.log("invalid")
         navigate("/login")
 
     }
@@ -106,8 +108,8 @@ async function checker() {
     }
     
   } else {
-    console.log(data.status);
-    console.log("invalid")
+    //console.log(data.status);
+    //console.log("invalid")
     localStorage.removeItem('token')
     navigate("/login")
   }
@@ -133,7 +135,7 @@ async function checker() {
 			setValid(false);
       navigate('/login');
 		}
-    console.log({'user_validation':valid});
+    //console.log({'user_validation':valid});
 
 	}
 
@@ -142,13 +144,13 @@ async function checker() {
 		if (token) {
       
 			const user = jwt(token)
-      console.log(user['username'])
+      //console.log(user['username'])
 			if (!user) {
-        console.log("invalid")
+        //console.log("invalid")
 				localStorage.removeItem('token')
         navigate("/login")
 			} else {
-        console.log("token passed")
+        //console.log("token passed")
         
 				populateQuote()
 			}

@@ -87,8 +87,8 @@ const onPaper =e=>{
 
 const onDomain =e=>{
   setDomain(e.target.value);
-  console.log('got')
-  //console.log(Author_Name,Author_Type,Institution,Address,Mobile,IEEE_No,Coauthors,Coauthors_Affiliation,Paper_Title,Domain);
+  //console.log('got')
+  ////console.log(Author_Name,Author_Type,Institution,Address,Mobile,IEEE_No,Coauthors,Coauthors_Affiliation,Paper_Title,Domain);
 }
 ////////////////////
 
@@ -135,27 +135,27 @@ setUploadedFile(fileName,filePath);
 setError('Uploaded')
 SetStatusColor('green');
 
-console.log({'fileName':fileName,'filepath':filePath})
+//console.log({'fileName':fileName,'filepath':filePath})
 navigate('/status')
   }catch(err){
-    console.log(err)
+    //console.log(err)
     if(err.message=='Network Error'){
-      console.log('Network Error');
+      //console.log('Network Error');
       setError('File size exceeded / Network Error');
       SetStatusColor('red');
     }
     if(err['error'] === 500){
-      console.log('Problem with server');
-      console.log(err);
+      //console.log('Problem with server');
+      //console.log(err);
     }
     if(err['error'] === 600){
-      console.log('Only pdfs are allowed');
-      setError('Only Pdf are accepted');
+      //console.log('Only pdfs are allowed');
+      setError('Only Pdf is accepted');
       SetStatusColor('red');
     }
    
     else{
-      console.log(err.response.data.msg);
+      //console.log(err.response.data.msg);
     }
   }
 
@@ -173,8 +173,8 @@ async function checker() {
   
 
   const data = await req.json()
-  console.log('FROM CHECKER')
-  console.log(data)
+  //console.log('FROM CHECKER')
+  //console.log(data)
   if (data.status == 'ok') {
     
     if(data.waiting=='G'){
@@ -213,7 +213,7 @@ async function checker() {
 			setValid(false);
       navigate('/login');
 		}
-    console.log({'user_validation':valid});
+    //console.log({'user_validation':valid});
 
 	}
 
@@ -222,13 +222,13 @@ async function checker() {
 		if (token) {
       
 			const user = jwt(token)
-      console.log(user['username'])
+      //console.log(user['username'])
 			if (!user) {
-        console.log("invalid")
+        //console.log("invalid")
 				localStorage.removeItem('token')
         navigate("/login")
 			} else {
-        console.log("token passed")
+        //console.log("token passed")
         
 				populateQuote()
 			}

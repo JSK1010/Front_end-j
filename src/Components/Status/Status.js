@@ -95,7 +95,7 @@ async function getComments() {
       setDecision("NOT UPDATED")
     }
   } else {
-    console.log(data.status);
+    //console.log(data.status);
   }
 mypdfinfo()
 }
@@ -120,7 +120,7 @@ mypdfinfo()
 			setValid(false);
       navigate('/login');
 		}
-    console.log({'user_validation':valid});
+    //console.log({'user_validation':valid});
 
 	}
 
@@ -132,11 +132,11 @@ mypdfinfo()
       setUser(user['username'])
 
 			if (!user) {
-        console.log("invalid")
+        //console.log("invalid")
 				localStorage.removeItem('token')
         navigate("/login")
 			} else {
-        console.log("token passed")
+        //console.log("token passed")
 				populateQuote()
 			}
 		}

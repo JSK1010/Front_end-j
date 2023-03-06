@@ -96,7 +96,7 @@ if(valid==true){
     }
     
   }).then((res)=>{
-    console.log(res)
+    //console.log(res)
     const file = new Blob(
       [res.data], 
       {type: 'application/pdf'});
@@ -129,7 +129,7 @@ async function populateQuote() {
     setValid(false);
     navigate('/login');
   }
-  console.log({'user_validation':valid});
+  //console.log({'user_validation':valid});
 
 }
 
@@ -143,18 +143,18 @@ useEffect(() => {
   if (token) {
     
     const user = jwt(token)
-    console.log(user['username'])
+    //console.log(user['username'])
     if (!user) {
-      console.log("invalid")
+      //console.log("invalid")
       localStorage.removeItem('token')
       navigate("/Adminlogin")
     } else {
       if(user['username']=='admin@gmail.com'){
-      console.log("token passed")
+      //console.log("token passed")
       populateQuote();
       }
       else{
-        console.log("invalid")
+        //console.log("invalid")
       localStorage.removeItem('token')
       navigate("/Adminlogin")
       }

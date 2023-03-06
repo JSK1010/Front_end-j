@@ -41,7 +41,7 @@ async function handleClick(event){
     }).then(async res => {
       try{
       var response=await res.json()
-      console.log(response.status) 
+     // console.log(response.status) 
       setError(response.status)
 
       
