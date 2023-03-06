@@ -5,6 +5,7 @@ import jwt from 'jwt-decode'
 import Card from './Card';
 import Axios from 'axios';
 import FileDownload from 'js-file-download'
+import Logout from '../Logout/Logout';
 const Ses = () => {
   const navigate = useNavigate();
 
@@ -58,7 +59,7 @@ async function getpdfinfos() {
   
   
   else{
-    navigate('/updatestatuslogin');
+    navigate('/Adminlogin');
   }
 
 
@@ -100,7 +101,7 @@ FileDownload(res.data,"SES"+down+'.pdf')
 }
 else{
 
-navigate('/updatestatuslogin')
+navigate('/Adminlogin')
 }
 }
 
@@ -139,7 +140,7 @@ useEffect(() => {
     if (!user) {
       console.log("invalid")
       localStorage.removeItem('token')
-      navigate("/updatestatuslogin")
+      navigate("/Adminlogin")
     } else {
       if(user['username']==='admin@gmail.com'){
       console.log("token passed")
@@ -148,21 +149,21 @@ useEffect(() => {
       else{
         console.log("invalid")
       localStorage.removeItem('token')
-      navigate("/updatestatuslogin")
+      navigate("/Adminlogin")
       }
 
     }
   }
 
   else{
-    navigate("/updatestatuslogin")
+    navigate("/Adminlogin")
   }
 }, [])
 
 
   return (
     <div className='publication'>
-      
+      <Logout />
 
         <div className="container">
         <div className="containerboxx">

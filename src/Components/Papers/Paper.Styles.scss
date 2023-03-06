@@ -26,12 +26,16 @@
     cursor:pointer;
     min-width: 100%;
     margin-left: 1vh;
-    background: #343a40;
+    background: #805b5b;
     border-radius: 0.6vh;
     color:white;
   }
 
   .status{
+    margin-top: 5vh;  
+      }
+    
+  .statuslink{
 
   display: flex;
   justify-content: right;

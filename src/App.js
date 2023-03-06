@@ -11,7 +11,7 @@ import Register from './Components/Sign/Register';
 import Verify from './Components/Sign/Verify';
 import Uploadagain from './Components/Uploadagain/Uploadagain';
 import Admin from './Components/Admin/Admin';
-import Updatestatuslogin from './Components/Updatestatuslogin/Updatestatuslogin';
+import Adminlogin from './Components/Adminlogin/Adminlogin';
 import Ses from './Components/Updatestatus/Ses';
 import Ngwct from './Components/Updatestatus/Ngwct';
 import Awn from './Components/Updatestatus/Awn';
@@ -22,6 +22,7 @@ import Wie from './Components/Updatestatus/Wie';
 import ForgotPasswordForm from './Components/ForgotPassword/ForgotPasswordForm';
 import Password from './Components/Sign/Password';
 import Newpassword from './Components/Sign/Newpassword';
+
 
 ///////
 
@@ -42,7 +43,7 @@ function App() {
         <Route path='/verify' exact element={<Verify />} />
         <Route path='/Admin' exact element={<Admin />} />
         <Route path='/status' exact element={<Status />} />
-        <Route path='/updatestatuslogin' exact element={<Updatestatuslogin />} />
+        <Route path='/Adminlogin' exact element={<Adminlogin />} />
         <Route path='/Ses' exact element={<Ses/>} />
         <Route path='/Ngwct' exact element={<Ngwct/>} />
         <Route path='/Awn' exact element={<Awn/>} />

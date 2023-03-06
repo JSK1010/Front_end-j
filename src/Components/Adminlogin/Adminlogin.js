@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Adminlogin = () => {
   const navigate = useNavigate();
  
 const [username,setUsername]=useState("");
@@ -52,7 +52,8 @@ async function handleClick(event){
   return (
     <div className='publication'>
         <div className='content resp_reg'>
-          
+        <div class='heading'>IEEE 2nd International Conference on <span><img className="vitecon"src='vitecon.png'></img></span></div>
+    
         <form>
         <h3 className='sign'>Log in</h3>
         <div className="email">
@@ -100,4 +101,4 @@ async function handleClick(event){
 
   )
   }
-export default Login;
+export default Adminlogin;

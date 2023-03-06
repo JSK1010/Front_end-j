@@ -59,7 +59,7 @@ async function handleClick(event){
   return (
     <div className='publication'>
         <div className='content resp_reg'>
-          
+          <div class='heading'>IEEE 2nd International Conference on <span><img className="vitecon"src='vitecon.png'></img></span></div>
         <form>
         <h3 className='sign'>Log in</h3>
         <div className="email">
@@ -73,6 +73,7 @@ async function handleClick(event){
             placeholder="Enter email"
           ></input>
         </div>
+        <br></br>
         <div className="email">
           <label>Password</label>
           <input
@@ -84,22 +85,23 @@ async function handleClick(event){
             placeholder="Enter password"
           />
         </div>
+        
         <div className='d-grid sub'>
         <p className="error">{error}</p>
        </div>
         <div className="d-grid sub">
-          <button type="submit" onClick={handleClick} className="btn btn-primary">
+         <button type="submit" onClick={handleClick} className="btn btn-primary btn-login">
             Log in
           </button>
         </div>
         <div className="d-grid right">
 <a href="/#/Password">Forgot password</a>
         </div>
-
+     
       </form>
-
       <p className='footer'>New User ? <Link className='link blink' to='/register'>Register Here</Link></p>
 
+     
 
 
 

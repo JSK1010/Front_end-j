@@ -3,7 +3,7 @@ $prime: #1C3879;
 
 .publication {
 
-    padding: 110px 0 40px 0;
+    padding: 25px 0 40px 0;
     background: -webkit-linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #e0dbe1, #ded9df, #dfdae1, #dcd6e0, #ded8e2, #dad4e0, #d9d3e1, #d5d1df, #d5cede);
@@ -55,13 +55,14 @@ $prime: #1C3879;
 
         .sign {
             display: flex;
-            margin-bottom: 6vh;
+            margin-bottom: 2vh;
             justify-content: center;
         }
         .right {
             justify-content: flex-end;
-            margin-top: 3vh;
             margin-right:0 ;
+            margin-top:3vh;
+    
             a{
 text-decoration: none;
 color:black;
@@ -73,8 +74,9 @@ font-weight:800;
 
         }
         .sub {
-
+            
             justify-content: space-around;
+            
 
             button {
                 border-radius: 10px;
@@ -127,11 +129,22 @@ font-weight:800;
 }
 
 
-
-
+.vitecon{
+    width: 12vw;
+    position: relative; /* Declared position allows for location changes */
+    top: -0.9vw; /* Moves the image 2px closer to the top of the page */
+}
 .resp_reg {
     min-width: 70%;
 
+
+}
+.heading{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 13.5%;
+ margin-bottom:5%;
+    font-size: 2.2vw;
+    font-weight: 400;
 
 }
 

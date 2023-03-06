@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import jwt from 'jwt-decode'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-
+import Logout from '../Logout/Logout';
 const Papers = () => {
   const navigate = useNavigate();
   // const [selectedFile, setSelectedFile] = useState();
@@ -176,6 +176,7 @@ async function checker() {
    
    
 <div>
+<Logout />
 <div className="formbold-main-wrapper">
   <div className="formbold-form-wrapper">
     <form className='resp_uploadagain' onSubmit={onSubmit} method="POST">

@@ -4,7 +4,7 @@ import jwt from 'jwt-decode'
 import Axios from 'axios';
 import FileDownload from 'js-file-download'
 import { useNavigate } from 'react-router-dom';
-
+import Logout from '../Logout/Logout';
 
 const Publication = () => {
   const navigate = useNavigate();
@@ -157,6 +157,7 @@ mypdfinfo()
    
    
     <div>
+      <Logout />
     <div className="formbold-main-wrapper">
       <div className="formbold-form-wrapper">
        

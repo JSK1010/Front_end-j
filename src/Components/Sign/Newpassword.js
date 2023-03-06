@@ -68,7 +68,8 @@ async function handleClick(event){
   return (
     <div className='publication'>
         <div className='content resp_reg'>
-          
+        <div class='heading'>IEEE 2nd International Conference on <span><img className="vitecon"src='vitecon.png'></img></span></div>
+    
         <form>
         <h3 className='sign'>Change Password</h3>
         <div className="email">

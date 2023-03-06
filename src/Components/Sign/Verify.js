@@ -12,7 +12,8 @@ const Verify = () => {
   return (
     <div className='publication'>
         <div className='content resp_reg'>
-          
+        <div class='heading'>IEEE 2nd International Conference on <span><img className="vitecon"src='vitecon.png'></img></span></div>
+    
         <form>
        <h4>Verify  your account via email. The link is only valid for the next 5 mins.</h4>
       </form>

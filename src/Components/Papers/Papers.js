@@ -5,7 +5,7 @@ import jwt from 'jwt-decode'
 import FileBase64 from 'react-file-base64';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-import ImpDates from '../Logout/Logout';
+import Logout from '../Logout/Logout';
 
 
 const Papers = () => {
@@ -136,18 +136,24 @@ setError('Uploaded')
 SetStatusColor('green');
 
 console.log({'fileName':fileName,'filepath':filePath})
-
+navigate('/status')
   }catch(err){
-
+    console.log(err)
+    if(err.message=='Network Error'){
+      console.log('Network Error');
+      setError('File size exceeded / Network Error');
+      SetStatusColor('red');
+    }
     if(err['error'] === 500){
       console.log('Problem with server');
       console.log(err);
     }
     if(err['error'] === 600){
       console.log('Only pdfs are allowed');
-      setError('Only Pdf');
+      setError('Only Pdf are accepted');
       SetStatusColor('red');
     }
+   
     else{
       console.log(err.response.data.msg);
     }
@@ -250,10 +256,13 @@ async function checker() {
 	
   return (
    <>
-    <ImpDates />
+    <Logout />
 <div>
+  
 <div className="formbold-main-wrapper">
+  
   <div className="formbold-form-wrapper">
+    
     <form onSubmit={onSubmit} method="POST">
     
 
@@ -454,22 +463,17 @@ async function checker() {
         
 
 
-          <div className="custom-file">
-  <input required type="file" className="custom-file-input" id="customFile" onChange={filechange}/>
-  <label className="custom-file-label " htmlFor="customFile">{filename}</label>
-  <span className='status' style={{color:statusColor}}>{error}</span>
-</div>
-       
               
           </label>
         </div>
-
+        <input type="file" onChange={filechange}/>
+        <p className='status' style={{color:statusColor}}>{error}</p>
         <button type='submit' className="formbold-btn">
-            Post the paper for review
+            Submit for review
         </button>
         
        
-<div className='status'>
+<div className='statuslink'>
 <Link to='/status'><button className="pub subm" role="button">Status</button></Link>
 </div>
     </form>

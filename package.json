@@ -1,7 +1,7 @@
 {
   "name": "vitecon",
   "version": "0.1.0",
-  "proxy": "https://vit-vitecon-back.onrender.com/",
+  "proxy": "https://vitecon.vit.ac.in/api/",
   "homepage": ".",
   "private": true,
   "dependencies": {
