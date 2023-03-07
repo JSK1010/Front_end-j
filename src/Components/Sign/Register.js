@@ -23,7 +23,7 @@ const Register = () => {
 
   async function handleClick(event) {
     event.preventDefault();
-    const response = await fetch(process.env.REACT_APP_hosting + "/verifygenerator", {
+    const response = await fetch("https://vitecon.vit.ac.in/api/verifygenerator", {
       method: "POST",
       crossDomain: true,
       headers: {
