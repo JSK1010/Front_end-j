@@ -26,7 +26,7 @@ function handleChangeP(event){
 
 async function handleClick(event){
   event.preventDefault();
-  const url=process.env.REACT_APP_hosting+"/newPassword"
+  const url="https://vitecon.vit.ac.in/api/newPassword"
   await fetch(url, {
       method: "POST",
       crossDomain: true,
