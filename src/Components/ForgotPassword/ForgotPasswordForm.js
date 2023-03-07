@@ -25,7 +25,7 @@ const ForgotPasswordForm = () => {
         event.preventDefault();
 
         try {
-            const url = process.env.REACT_APP_hosting + "/forgotPassword"
+            const url = "https://vitecon.vit.ac.in/api/forgotPassword"
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
