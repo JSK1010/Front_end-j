@@ -31,7 +31,7 @@ async function getpdfinfos() {
 
 
   
-  const req = await fetch(process.env.REACT_APP_hosting+'/getpdfinfos', {
+  const req = await fetch( 'https://vitecon.vit.ac.in/api/getpdfinfos', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -85,7 +85,7 @@ function getpdf(e){
 if(valid===true){
 
   Axios({
-    url:process.env.REACT_APP_hosting+"/getpdf/"+em,
+    url: "https://vitecon.vit.ac.in/api/getpdf/"+em,
     method:"GET",
     responseType:'blob'
   }).then((res)=>{
@@ -107,7 +107,7 @@ navigate('/Adminlogin')
 
 
 async function populateQuote() {
-  const req = await fetch(process.env.REACT_APP_hosting+'/validation_papers', {
+  const req = await fetch( 'https://vitecon.vit.ac.in/api/validation_papers', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },

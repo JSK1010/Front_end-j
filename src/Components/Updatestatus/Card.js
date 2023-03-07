@@ -20,7 +20,7 @@ const Card = (props) => {
   }
 
 async function majorc(){
-    await fetch(process.env.REACT_APP_hosting+'/warning/major', {
+    await fetch( 'https://vitecon.vit.ac.in/api/warning/major', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email,
@@ -39,7 +39,7 @@ if (window.confirm("Are you sure to finalize this paper !") === true) {
 
 
 async function finalizedc(){
-    await fetch(process.env.REACT_APP_hosting+'/finalized', {
+    await fetch( 'https://vitecon.vit.ac.in/api/finalized', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email
@@ -59,7 +59,7 @@ if (window.confirm("Fill up the Revision box for Minor Revision") === true) {
 
 
 async function minorc(){
-   await fetch(process.env.REACT_APP_hosting+'/warning/minor', {
+   await fetch( 'https://vitecon.vit.ac.in/api/warning/minor', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email,
@@ -81,7 +81,7 @@ if (window.confirm("Do you want to reject this paper?") === true) {
 async function rejectedc(){
   
   setAccepted_warnings(false);
-    await fetch(process.env.REACT_APP_hosting+'/paper_decision/false', {
+    await fetch( 'https://vitecon.vit.ac.in/api/paper_decision/false', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email,
@@ -93,7 +93,7 @@ async function rejectedc(){
 }
 
 async function getcolor(){
-  const req = await fetch(process.env.REACT_APP_hosting+'/getcolor', {
+  const req = await fetch( 'https://vitecon.vit.ac.in/api/getcolor', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
       'user':props.email

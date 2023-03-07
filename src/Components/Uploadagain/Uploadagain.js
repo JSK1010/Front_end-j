@@ -46,7 +46,7 @@ const onSubmit = async e=>{
   formData.append('file',file);
   formData.append('user',user);
   try{
-const res=await axios.post(process.env.REACT_APP_hosting+'/uploadagain',formData,{
+const res=await axios.post( 'https://vitecon.vit.ac.in/api/uploadagain',formData,{
   headers:{'Content-Type': 'application/x-www-form-urlencoded',
   'x-access-token': localStorage.getItem('token'),}
 });
@@ -89,7 +89,7 @@ SetStatusColor('green');
 
 
 async function checker() {
-  const req = await fetch(process.env.REACT_APP_hosting+'/getComments', {
+  const req = await fetch( 'https://vitecon.vit.ac.in/api/getComments', {
     headers: {
       'x-access-token': localStorage.getItem('token'),
     },
@@ -120,7 +120,7 @@ async function checker() {
 
 
 	async function populateQuote() {
-		const req = await fetch(process.env.REACT_APP_hosting+'/validation_papers', {
+		const req = await fetch( 'https://vitecon.vit.ac.in/api/validation_papers', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},
