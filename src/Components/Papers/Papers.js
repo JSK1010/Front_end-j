@@ -198,7 +198,7 @@ async function checker() {
 
 
 	async function populateQuote() {
-		const req = await fetch('https://vitecon.vit.ac.in/api//validation_papers', {
+		const req = await fetch('https://vitecon.vit.ac.in/api/validation_papers', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},

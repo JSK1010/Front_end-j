@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import './Logout.Styles.scss'
 
 const Logout = () => {
