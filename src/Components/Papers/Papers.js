@@ -277,7 +277,7 @@ async function checker() {
               type="text"
               name="Author Name"
               id="Author Name"
-              pattern="[a-zA-Z ]*"
+              pattern="[a-zA-Z .]*"
               placeholder=""
               onChange={onAuthorName}
               className="formbold-form-input"
@@ -391,7 +391,7 @@ async function checker() {
       required
       type="text"
       name="List of Co-Author Name (Comma Separated)"
-      pattern="[a-zA-Z, ]*"
+      pattern="[a-zA-Z,. ]*"
       placeholder=""
       onChange={onCoauthor}
       className="formbold-form-input"
@@ -406,7 +406,6 @@ async function checker() {
       required
       name="Co-Author Affiliation (Comma Separated)"
       placeholder=""
-      pattern="[0-9, ]*"
       onChange={onAffiliation}
       className="formbold-form-input"
       />
@@ -466,7 +465,7 @@ async function checker() {
               
           </label>
         </div>
-        <input type="file" onChange={filechange}/>
+        <input required type="file" onChange={filechange}/>
         <p className='status' style={{color:statusColor}}>{error}</p>
         <button type='submit' className="formbold-btn">
             Submit for review
