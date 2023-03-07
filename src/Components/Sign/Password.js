@@ -23,7 +23,7 @@ const Password = () => {
 
   async function handleClick(event) {
     event.preventDefault();
-    const response = await fetch(process.env.REACT_APP_hosting + "/forgotPasswordEmail", {
+    const response = await fetch("https://vitecon.vit.ac.in/api/forgotPasswordEmail", {
       method: "POST",
       crossDomain: true,
       headers: {
