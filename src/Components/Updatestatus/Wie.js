@@ -85,7 +85,7 @@ function getpdf(e){
 if(valid==true){
 
   Axios({
-    url:'https://vitecon.vit.ac.in/api/getpdf/"+em,
+    url:"https://vitecon.vit.ac.in/api/getpdf/"+em,
     method:"GET",
     responseType:'blob'
   }).then((res)=>{
