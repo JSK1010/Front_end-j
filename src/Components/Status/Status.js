@@ -92,7 +92,7 @@ async function getComments() {
       setDecision("REJECTED")
     }
     else{
-      setDecision("NOT UPDATED")
+      setDecision("Under Review")
     }
   } else {
     //console.log(data.status);
