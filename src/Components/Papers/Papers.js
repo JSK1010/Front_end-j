@@ -362,7 +362,7 @@ async function checker() {
       <div className='col-lg-6 col-sm-12'>
       <label htmlFor="IEEE Membership No." className="formbold-form-label">IEEE Membership No.</label>
       <input
-      required
+     
       name="IEEE Membership No."
       type="text"
       placeholder=""
@@ -388,7 +388,7 @@ async function checker() {
     <label htmlFor="List of Co-Author Name (Comma Separated)" className="formbold-form-label">List of Co-Author Name
 (Comma Separated)</label>
       <input
-      required
+   
       type="text"
       name="List of Co-Author Name (Comma Separated)"
       pattern="[a-zA-Z,. ]*"
@@ -403,7 +403,7 @@ async function checker() {
       <label htmlFor="Co-Author Affiliation (Comma Separated)" className="formbold-form-label">Co-Author Affiliation
 (Comma Separated)</label>
       <input
-      required
+      
       name="Co-Author Affiliation (Comma Separated)"
       placeholder=""
       onChange={onAffiliation}
